@@ -632,15 +632,8 @@
                 </svg>
             </div>
         </div>
-    </section>
-
-    <section id="planteamiento">
-        <h2 class="section-title">Planteamiento del Proyecto</h2>
+    </section<section id="planteamiento"> <h2 class="section-title">Planteamiento del Proyecto</h2>
         <div class="intro-grid">
-            <div class="intro-box">
-                <h3><i class="fas fa-book-open"></i> Introducción</h3>
-                <p>El presente proyecto de investigación analiza la correlación directa entre el consumo de sustancias psicoactivas y el desempeño escolar. Centrado en una etapa crítica del desarrollo humano, este estudio busca visibilizar los desafíos internos y externos que afrontan los jóvenes del nivel medio superior.</p>
-            </div>
-            <div class="problem-box">
-                <h3><i class="fas fa-exclamation-triangle"></i> Problema de Investigación</h3>
-                <p>Durante el ciclo escolar 2025-2026, se ha observado una inquietante fluctuación en las calificaciones y permanencia de los alumnos de <strong>segundo semestre del CETis 20</strong>. El problema radica en identificar el impacto real del consumo temprano de estupefacientes en la deserción escolar, la pérdida de motivación cognitiva y el qu
+  <div class="intro-box"><h3><i class="fas fa-book-open"></i> Introducción</h3><p>El presente proyecto de investigación analiza la correlación directa entre el consumo de sustancias psicoactivas y el desempeño escolar. Centrado en una etapa crítica del desarrollo humano, este estudio busca visibilizar los desafíos internos y externos que afrontan los jóvenes del nivel medio superior.</p></div>
+ <div class="problem-box">
+  <h3><i class="fas fa-exclamation-triangle"></i> Problema de Investigación</h3><p>Durante el ciclo escolar 2025-2026, se ha observado una inquietante fluctuación en las calificaciones y permanencia de los alumnos de <strong>segundo semestre del CETis 20</strong>. El problema radica en identificar el impacto real del consumo temprano de estupefacientes en la deserción escolar, la pérdida de motivación cognitiva y el qu
