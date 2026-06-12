@@ -2,25 +2,24 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investigación CETis 20 | Rendimiento Escolar y Prevención</title><!--Iconos de FontAwesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"<titleInvestigación CETis 20 | Rendimiento Escolar y Prevención<title><!--Iconos de FontAwesome --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>/*-- ESTILOS GLOBALES Y PALETA (Rosa, Lila, Blanco) --- */:root {--rosa-principal: #ff6b8b; --rosa-claro: #ffeef2;--lila-principal: #8a70d6;-lila-oscuro: #5b45a0;
-            --lila-suave: #f3f0ff;
-            --blanco: #ffffff;
-            --gris-oscuro: #2d2d2d;
-            --gris-texto: #555555;
-            --sombra: rgba(138, 112, 214, 0.15);
-            --transition: all 0.3s ease;}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>/*-- ESTILOS GLOBALES Y PALETA (Rosa, Lila, Blanco) --- */:root {-rosa-principal: #ff6b8b; -rosa-claro: #ffeef2;-lila-principal: #8a70d6;-lila-oscuro:#5b45a0;
+            -lila-suave: #f3f0ff;
+            -blanco: #ffffff;
+            -gris-oscuro: #2d2d2d;
+            -gris-texto: #555555;
+            -sombra: rgba(138, 112, 214, 0.15);
+            -transition: all 0.3s ease;}
  * { margin: 0;
             padding: 0;
             box-sizing: border-box;
-            scroll-behavior: smooth;}body {
+            scroll-behavior: smooth;{body{
             font-family: 'Poppins', sans-serif;
-            background-color: #faf9ff;
-            color: var(--gris-oscuro);
+            background-color:#faf9ff;
+            color: var(-gris-oscuro);
             line-height: 1.6;}
 /* --- ENCABEZADO Y MENÚ FIJO --- */header {
             position: fixed;
@@ -28,7 +27,7 @@
             left: 0;
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 20px var(--sombra);
+            box-shadow: 0 4px 20px var(-sombra);
             z-index: 1000;
             backdrop-filter: blur(10px);
         }.nav-container {
@@ -36,9 +35,7 @@
             margin: 0 auto;
             padding: 15px 20px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }.logo-area {
+            justify-content: space-between;align-items: center;}.logo-area{
             display: flex;
             flex-direction: column;
         }.logo-area h1 {
@@ -58,12 +55,12 @@
             color: var(--gris-texto);
             font-weight: 600;
             font-size: 0.9rem;
-            transition: var(--transition);
+            transition: var(-transition);
             padding: 8px 12px;
             border-radius: 20px;
-        }.nav-menu a:hover, .nav-menu a.active {
-            color: var(--rosa-principal);
-            background: var(--rosa claro);}.menu-toggle {
+       }.nav-menu a:hover, .nav-menu a.active {
+            color: var(-rosa principal);
+            background: var(-rosa claro);}.menu-toggle{
             display: none;
             font-size: 1.5rem;
             color: var(-- lila principal);
@@ -97,20 +94,21 @@
             align-items: center;
         }.hero-text h2 {
             font-size: 2.3rem;
-            color: var(--lila-oscuro);
+            color: var(-lila-oscuro);
             line-height: 1.3;
             margin-bottom: 20px;
         } .hero-text p {
             font-size: 1.1rem;
-            color: var(--gris-texto);
+            color: var(--
+                       gris-texto);
             margin-bottom: 30px;
-            border-left: 4px solid var(--rosa-principal);
+            border-left: 4px solid var(-rosa-principal);
             padding-left: 15px;
    font-style: italic;}.ctabtn {
             display: inline-block;
             padding: 12px 30px;
-            background: linear-gradient(45deg, var(--rosa-principal), var(--lila-principal));
-            color: var(--blanco);
+            background: linear-gradient(45deg, var(-rosa-principal), var(-lila-principal));
+            color: var(-blanco);
             text-decoration: none;
             font-weight: 600;
             border-radius: 30px;
@@ -126,7 +124,7 @@
         } /* SVG dinámico de estudiantes como imagen profesional */.hero-img svg {
             width: 100%;
             max-width: 450px;
-            filter: drop-shadow(0 10px 15px var(--sombra));
+            filter: drop-shadow(0 10px 15px var(-sombra));
             animation: float 4s ease-in-out infinite;
         }
  @keyframes float {
@@ -141,7 +139,7 @@
 .section-title {
             text-align: center;
             font-size: 2rem;
-            color: var(--lila-oscuro);
+            color: var(-lila-oscuro);
             margin-bottom: 50px;
             position: relative;
         }
@@ -153,7 +151,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 4px;
-            background: var(--rosa-principal);
+            background: var(-rosa-principal);
             border-radius: 2px;
         }
 /* --- INTRODUCCIÓN Y PROBLEMA --- */
