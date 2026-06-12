@@ -49,7 +49,7 @@
             backdrop-filter: blur(10px);
         }
 
-        .nav-container {
+   .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 15px 20px;
@@ -58,31 +58,31 @@
             align-items: center;
         }
 
-        .logo-area {
+     .logo-area {
             display: flex;
             flex-direction: column;
         }
 
-        .logo-area h1 {
+    .logo-area h1 {
             font-size: 1.1rem;
             color: var(--lila-oscuro);
             font-weight: 700;
         }
 
-        .logo-area span {
+    .logo-area span {
             font-size: 0.75rem;
             color: var(--rosa-principal);
             font-weight: 600;
             letter-spacing: 1px;
         }
 
-        .nav-menu {
+     .nav-menu {
             display: flex;
             list-style: none;
             gap: 20px;
         }
 
-        .nav-menu a {
+    .nav-menu a {
             text-decoration: none;
             color: var(--gris-texto);
             font-weight: 600;
@@ -92,18 +92,17 @@
             border-radius: 20px;
         }
 
-        .nav-menu a:hover, .nav-menu a.active {
+    .nav-menu a:hover, .nav-menu a.active {
             color: var(--rosa-principal);
             background: var(--rosa-claro);
         }
 
-        .menu-toggle {
+     .menu-toggle {
             display: none;
             font-size: 1.5rem;
             color: var(--lila-principal);
             cursor: pointer;
         }
-
         /* --- PORTADA PRINCIPAL --- */
         .hero {
             margin-top: 70px;
