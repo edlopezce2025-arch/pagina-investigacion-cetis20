@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación CETis 20 | Rendimiento Escolar y Prevención</title>
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ESTILOS GLOBALES Y PALETA (Rosa, Lila, Blanco) --- */
+        :root {
+            --rosa-principal: #ff6b8b;
+            --rosa-claro: #ffeef2;
+            --lila-principal: #8a70d6;
+            --lila-oscuro: #5b45a0;
+            --lila-suave: #f3f0ff;
+            --blanco: #ffffff;
+            --gris-oscuro: #2d2d2d;
+            --gris-texto: #555555;
+            --sombra: rgba(138, 112, 214, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #faf9ff;
+            color: var(--gris-oscuro);
+            line-height: 1.6;
+        }
+
+        /* --- ENCABEZADO Y MENÚ FIJO --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px var(--sombra);
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-area h1 {
+            font-size: 1.1rem;
+            color: var(--lila-oscuro);
+            font-weight: 700;
+        }
+
+        .logo-area span {
+            font-size: 0.75rem;
+            color: var(--rosa-principal);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--gris-texto);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            padding: 8px 12px;
+            border-radius: 20px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--rosa-principal);
+            background: var(--rosa-claro);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--lila-principal);
+            cursor: pointer;
+        }
+
+        /* --- PORTADA PRINCIPAL --- */
+        .hero {
+            margin-top: 70px;
+            min-height: calc(85vh - 70px);
+            background: linear-gradient(135deg, var(--rosa-claro) 0%, var(--lila-suave) 100%);
+            display: flex;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 107, 139, 0.1);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-text h2 {
+            font-size: 2.3rem;
+            color: var(--lila-oscuro);
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--gris-texto);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--rosa-principal);
+            padding-left: 15px;
+            font-style: italic;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(45deg, var(--rosa-principal), var(--lila-principal));
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.4);
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(138, 70, 214, 0.4);
+        }
+
+        .hero-img {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* SVG dinámico de estudiantes como imagen profesional */
+        .hero-img svg {
+            width: 100%;
+            max-width: 450px;
+            filter: drop-shadow(0 10px 15px var(--sombra));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* --- SECCIONES COMUNES --- */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--lila-oscuro);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--rosa-principal);
+            border-radius: 2px;
+        }
+
+        /* --- INTRODUCCIÓN Y PROBLEMA --- */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: var(--blanco);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--sombra);
+        }
+
+        .intro-box h3, .problem-box h3 {
+            color: var(--rosa-principal);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- OBJETIVOS --- */
+        .objectives-container {
+            background: linear-gradient(135deg, var(--lila-principal), var(--lila-oscuro));
+            color: var(--blanco);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(91, 69, 160, 0.3);
+        }
+
+        .general-obj {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .general-obj h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .specific-objs h3 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .specific-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        .spec-card i {
+            font-size: 1.5rem;
+            color: var(--rosa-principal);
+            margin-bottom: 15px;
+        }
+
+        /* --- MARCO TEÓRICO Y TARJETAS --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 20px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 25px var(--sombra);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--rosa-principal);
+            box-shadow: 0 15px 35px rgba(255, 107, 139, 0.15);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--lila-suave);
+            color: var(--lila-principal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-icon {
+            background: var(--rosa-principal);
+            color: var(--blanco);
+        }
+
+        .card h3 {
+            color: var(--lila-oscuro);
+            margin-bottom: 15px;
+        }
+
+        /* --- INDICADORES VISUALES / RESULTADOS ESPERADOS --- */
+        .results-section {
+            background: var(--blanco);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px var(--sombra);
+        }
+
+        .results-dashboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .metric-box {
+            background: var(--lila-suave);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid var(--lila-principal);
+        }
+
+        .metric-box .number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--lila-oscuro);
+            margin-bottom: 5px;
+        }
+
+        /* Gráfico visual simulado con CSS interactivo */
+        .chart-box {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .chart-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: var(--gris-texto);
+            text-align: center;
+        }
+
+        .bar-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .bar-label {
+            width: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .bar-track {
+            flex-grow: 1;
+            height: 15px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--lila-principal), var(--rosa-principal));
+            border-radius: 10px;
+            width: 0%; /* Animado por JS */
+            transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
+        }
+
+        .bar-pct {
+            font-size: 0.8rem;
+            font-weight: 700;
+            width: 35px;
+            color: var(--rosa-principal);
+        }
+
+        /* --- CONSECUENCIAS Y CONCLUSIONES --- */
+        .consequences-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .consequences-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .consequence-item {
+            background: var(--blanco);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px var(--sombra);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            border-left: 5px solid var(--rosa-principal);
+            transition: var(--transition);
+        }
+
+        .consequence-item:hover {
+            transform: scale(1.02);
+        }
+
+        .consequence-item i {
+            font-size: 1.3rem;
+            color: var(--rosa-principal);
+            background: var(--rosa-claro);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, var(--rosa-claro) 0%, var(--lila-suave) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px dashed var(--lila-principal);
+        }
+
+        .conclusion-box h3 {
+            color: var(--lila-oscuro);
+            margin-bottom: 15px;
+        }
+
+        /* --- BIBLIOGRAFÍA --- */
+        .biblio-box {
+            background: var(--blanco);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px var(--sombra);
+        }
+
+        .biblio-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .biblio-list li {
+            padding-left: 30px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--gris-texto);
+        }
+
+        .biblio-list li::before {
+            content: "02d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--lila-principal);
+        }
+
+        /* --- PIE DE PÁGINA --- */
+        footer {
+            background: var(--lila-oscuro);
+            color: var(--blanco);
+            padding: 40px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-about h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--rosa-principal);
+        }
+
+        .footer-links h4 {
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--rosa-principal);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* --- RESPONSIVE / ADAPTABILIDAD --- */
+        @media (max-width: 992px) {
+            .hero-container, .intro-grid, .results-dashboard, .consequences-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-img {
+                order: -1;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-text p {
+                border-left: none;
+                border-bottom: 3px solid var(--rosa-principal);
+                padding-left: 0;
+                padding-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--blanco);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px var(--sombra);
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ENCABEZADO -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <h1>CETis No. 20</h1>
+                <span>PROYECTO DE INVESTIGACIÓN</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-list">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#planteamiento">Problema</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#marco-teorico">Marco Teórico</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#consecuencias">Consecuencias</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 2. PORTADA PRINCIPAL -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h2>¿Cómo influye el uso de las drogas en el rendimiento escolar?</h2>
+                <p>"La educación y la prevención son las herramientas más poderosas para construir un futuro académico brillante y libre de adicciones."</p>
+                <p style="font-size:0.9rem; font-style:normal; border:none; color:var(--lila-oscuro); font-weight:600;">
+                    Estudio enfocado en alumnos de segundo semestre de preparatoria del CETis 20 <br>Ciclo Escolar 2025-2026
+                </p>
+                <a href="#planteamiento" class="cta-btn">Explorar Investigación</a>
+            </div>
+            <div class="hero-img">
+                <!-- Ilustración Vectorial Educativa Adaptable -->
+                <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="250" cy="200" r="180" fill="#f3f0ff"/>
+                    <rect x="120" y="280" width="260" height="40" rx="10" fill="#8a70d6"/>
+                    <path d="M180,280 L180,160 L320,160 L320,280 Z" fill="#ff6b8b" opacity="0.8"/>
+                    <polygon points="250,80 150,140 350,140" fill="#5b45a0"/>
+                    <rect x="235" y="140" width="30" height="140" fill="#ffffff" opacity="0.3"/>
+                    <circle cx="250" cy="210" r="40" fill="#ffffff"/>
+                    <path d="M235,210 L250,225 L270,195" stroke="#8a70d6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 y 4. INTRODUCCIÓN Y PROBLEMA DE INVESTIGACIÓN -->
+    <section id="planteamiento">
+        <h2 class="section-title">Planteamiento del Proyecto</h2>
+        <div class="intro-grid">
+            <div class="intro-box">
+                <h3><i class="fas fa-book-open"></i> Introducción</h3>
+                <p>El presente proyecto de investigación analiza la correlación directa entre el consumo de sustancias psychoactivas y el desempeño escolar. Centrado en una etapa crítica del desarrollo humano, este estudio busca visibilizar los desafíos internos y externos que afrontan los jóvenes del nivel medio superior.</p>
+            </div>
+            <div class="problem-box">
+                <h3><i class="fas fa-exclamation-triangle"></i> Problema de Investigación</h3>
+                <p>Durante el ciclo escolar 2025-2026, se ha observado una inquietante fluctuación en las calificaciones y permanencia de los alumnos de <strong>segundo semestre del CETis 20</strong>. Surge la necesidad imperante de responder: ¿De qué manera y en qué medida influye el uso de drogas en el rendimiento escolar de esta comunidad específica?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 y 6. OBJETIVOS -->
+    <section id="objetivos">
+        <div class="objectives-container">
+            <div class="general-obj">
+                <h3><i class="fas fa-bullseye"></i> Objetivo General</h3>
+                <p>Determinar el impacto del uso de drogas en el rendimiento académico de los estudiantes de segundo semestre del CETis 20 durante el ciclo escolar 2025-2026, con el fin de generar datos diagnósticos que sustenten futuras estrategias de prevención institucional.</p>
+            </div>
+            <div class="specific-objs">
+                <h3>Objetivos Específicos</h3>
+                <div class="specific-grid">
+                    <div class="spec-card">
+                        <i class="fas fa-search"></i>
+                        <p>Identificar cuáles son las sustancias de mayor consumo entre la población estudiantil evaluada.</p>
+                    </div>
+                    <div class="spec-card">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Comparar los promedios numéricos antes y después de la incidencia detectada del consumo.</p>
+                    </div>
+                    <div class="spec-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <p>Diseñar propuestas de intervención psicopedagógica adecuadas al contexto del CETis 20.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. MARCO TEÓRICO -->
+    <section id="marco-teorico">
+        <h2 class="section-title">Marco Teórico</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-flask"></i></div>
+                <h3>Concepto de Drogas</h3>
+                <p>Según la OMS, una droga es toda sustancia introducida en el organismo vivo que altera una o más de sus funciones, modificando la percepción, el ánimo o el estado cognitivo del estudiante.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-pills"></i></div>
+                <h3>Tipos de Drogas</h3>
+                <p>Clasificadas de acuerdo a sus efectos en el Sistema Nervioso Central: Depresoras (alcohol, inhalantes), Estimulantes (tabaco, anfetaminas) y Perturbadoras o Alucinógenas.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-users-cog"></i></div>
+                <h3>Consecuencias Sociales</h3>
+                <p>Afecta el núcleo familiar, propicia el aislamiento, altera las relaciones interpersonales con pares y profesores, e incrementa conductas de riesgo fuera y dentro del plantel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. RESULTADOS ESPERADOS (E INDICADORES) -->
+    <section id="resultados">
+        <h2 class="section-title">Resultados Esperados e Indicadores</h2>
+        <div class="results-section">
+            <div class="results-dashboard">
+                <div class="metrics-grid">
+                    <div class="metric-box">
+                        <div class="number">85%</div>
+                        <p>De asertividad proyectada en la correlación de datos</p>
+                    </div>
+                    <div class="metric-box">
+                        <div class="number">2°</div>
+                        <p>Semestre bajo mayor vulnerabilidad estadística</p>
+                    </div>
+                </div>
+                <!-- Gráfico interactivo/visual simulado -->
+                <div class="chart-box">
+                    <div class="chart-title">Estimación de Afectación en Variables Educativas</div>
+                    <div class="bar-container">
+                        <div class="bar-row">
+                            <span class="bar-label">Falta Atención</span>
+                            <div class="bar-track"><div class="bar-fill" data-width="75%"></div></div>
+                            <span class="bar-pct">75%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Bajo Promedio</span>
+                            <div class="bar-track"><div class="bar-fill" data-width="90%"></div></div>
+                            <span class="bar-pct">90%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Ausentismo</span>
+                            <div class="bar-track"><div class="bar-fill" data-width="60%"></div></div>
+                            <span class="bar-pct">60%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. CONSECUENCIAS DEL CONSUMO Y CONCLUSIONES -->
+    <section id="consecuencias">
+        <h2 class="section-title">Impacto Crítico y Conclusiones</h2>
+        <div class="consequences-layout">
+            <div class="consequences-list">
+                <div class="consequence-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <div>
+                        <h4>Bajo Rendimiento Escolar</h4>
+                        <p>Descenso notable de calificaciones debido al deterioro cognitivo temporal o permanente.</p>
+                    </div>
+                </div>
+                <div class="consequence-item">
+                    <i class="fas fa-user-times"></i>
+                    <div>
+                        <h4>Ausentismo y Deserción</h4>
+                        <p>Pérdida consecutiva de clases presenciales que conduce invariablemente al abandono escolar.</p>
+                    </div>
+                </div>
+                <div class="consequence-item">
+                    <i class="fas fa-brain"></i>
+                    <div>
+                        <h4>Falta de Concentración</h4>
+                        <p>Disminución drástica en la retención de memoria a corto plazo y resolución de problemas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="conclusion-box">
+                <h3><i class="fas fa-clipboard-check"></i> Conclusiones del Estudio</h3>
+                <p>El análisis preliminar del ciclo escolar 2025-2026 denota que el uso de sustancias no es un evento aislado, sino un factor desencadenante del fracaso escolar. Mitigar esta problemática en el CETis 20 requiere esfuerzos compartidos; la detección oportuna en el segundo semestre blindará el trayecto terminal de los estudiantes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. BIBLIOGRAFÍA -->
+    <section id="bibliografia">
+        <h2 class="section-title">Bibliografía Consultada</h2>
+        <div class="biblio-box">
+            <ul class="biblio-list">
+                <li>Organización Mundial de la Salud (OMS). (2023). <em>Glosario de términos de alcohol y drogas</em>. Ginebra: OMS.</li>
+                <li>Secretaría de Educación Pública (SEP). (2024). <em>Estrategia en el aula: Prevención de adicciones en la EMS</em>. México.</li>
+                <li>Instituto Nacional de Psiquiatría Ramón de la Fuente Muñiz. (2022). <em>Encuesta Nacional de Consumo de Drogas en Estudiantes</em>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 13. PIE DE PÁGINA PROFESIONAL -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h4>CETis No. 20</h4>
+                <p>Centro de Estudios Tecnológicos industrial y de servicios No. 20.<br>Investigación formativa orientada al bienestar de nuestra comunidad estudiantil.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#marco-teorico">Marco Teórico</a></li>
+                    <li><a href="#bibliografia">Bibliografía</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Proyecto de Investigación CETis 20. Todos los derechos reservados. Desarrollado con fines educativos y de prevención social.</p>
+        </div>
+    </footer>
+
+    <!-- LOGICA INTERACTIVA EN JAVASCRIPT -->
+    <script>
+        // Menu de navegación móvil toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Cerrar menú al dar click a un enlace en celular
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+
+        // Cambio de estado activo en menú de navegación según el scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+        // Animación de las barras de gráficos al entrar en pantalla (Observer)
+        const chartSection = document.getElementById('resultados');
+        const barFills = document.querySelectorAll('.bar-fill');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    barFills.forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-width');
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(chartSection);
+    </script>
+</body>
+</html>
