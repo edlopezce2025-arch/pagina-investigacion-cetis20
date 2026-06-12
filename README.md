@@ -115,7 +115,7 @@
             overflow: hidden;
         }
 
-        .hero::before {
+    .hero::before {
             content: '';
             position: absolute;
             width: 300px;
@@ -126,7 +126,7 @@
             right: -50px;
         }
 
-        .hero-container {
+    .hero-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
@@ -135,14 +135,14 @@
             align-items: center;
         }
 
-        .hero-text h2 {
+   .hero-text h2 {
             font-size: 2.3rem;
             color: var(--lila-oscuro);
             line-height: 1.3;
             margin-bottom: 20px;
         }
 
-        .hero-text p {
+   .hero-text p {
             font-size: 1.1rem;
             color: var(--gris-texto);
             margin-bottom: 30px;
@@ -151,7 +151,7 @@
             font-style: italic;
         }
 
-        .cta-btn {
+    .cta-btn {
             display: inline-block;
             padding: 12px 30px;
             background: linear-gradient(45deg, var(--rosa-principal), var(--lila-principal));
@@ -163,36 +163,32 @@
             transition: var(--transition);
         }
 
-        .cta-btn:hover {
+    .cta-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 70, 214, 0.4);
         }
 
-        .hero-img {
+    .hero-img {
             display: flex;
             justify-content: center;
         }
 
-        .hero-img svg {
+    .hero-img svg {
             width: 100%;
             max-width: 450px;
             filter: drop-shadow(0 10px 15px var(--sombra));
             animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
+        } @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
-        }
-
-        /* --- SECCIONES COMUNES --- */
+        }  /* --- SECCIONES COMUNES --- */
         section {
             padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-title {
+    .section-title {
             text-align: center;
             font-size: 2rem;
             color: var(--lila-oscuro);
@@ -200,7 +196,7 @@
             position: relative;
         }
 
-        .section-title::after {
+    .section-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -212,7 +208,7 @@
             border-radius: 2px;
         }
 
-        /* --- INTRODUCCIÓN Y PROBLEMA --- */
+     /* --- INTRODUCCIÓN Y PROBLEMA --- */
         .intro-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -223,7 +219,7 @@
             box-shadow: 0 10px 30px var(--sombra);
         }
 
-        .intro-box h3, .problem-box h3 {
+    .intro-box h3, .problem-box h3 {
             color: var(--rosa-principal);
             margin-bottom: 15px;
             display: flex;
