@@ -1,4 +1,4 @@
-                                                              <!DOCTYPE html>
+                                    <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>/*-- ESTILOS GLOBALES Y PALETA (Rosa, Lila, Blanco) --- */:root {--rosa-principal: #ff6b8b; --rosa-claro: #ffeef2;--lila-principal: #8a70d6;
-            --lila-oscuro: #5b45a0;
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"><style>/*-- ESTILOS GLOBALES Y PALETA (Rosa, Lila, Blanco) --- */:root {--rosa-principal: #ff6b8b; --rosa-claro: #ffeef2;--lila-principal: #8a70d6;-lila-oscuro: #5b45a0;
             --lila-suave: #f3f0ff;
             --blanco: #ffffff;
             --gris-oscuro: #2d2d2d;
