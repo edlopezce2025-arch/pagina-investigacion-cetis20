@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
         /* --- ESTILOS GLOBALES Y PALETA (Rosa, Lila, Blanco) --- */
-        :root {
-           --rosa-principal: #ff6b8b;
+        :root {--rosa-principal:#ff6b8b;
             --rosa-claro: #ffeef2;
             --lila-principal: #8a70d6;
             --lila-oscuro: #5b45a0;
@@ -19,26 +18,13 @@
             --blanco: #ffffff;
             --gris-oscuro: #2d2d2d;
             --gris-texto: #555555;
-            --sombra: rgba(138, 112, 214, 0.15);
-            --transition: all 0.3s ease;
-        }
-
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-    body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #faf9ff;
+        --sombra: rgba(138, 112, 214,0.15);
+            -transition: all 0.3s ease;}*{margin: 0;
+  padding: 0;box-sizing: border-box;
+            scroll-behavior:smooth;}body{font-family: 'Poppins', sans-serif; background-color:#faf9ff;
             color: var(--gris-oscuro);
             line-height: 1.6;
-        }
-
-    /* --- ENCABEZADO Y MENÚ FIJO --- */
-        header {
+        }/* --- ENCABEZADO Y MENÚ FIJO --- */header {
             position: fixed;
             top: 0;
             left: 0;
@@ -48,28 +34,22 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
         }
-
-   .nav-container {
+.nav-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-     .logo-area {
+        }.logo-area {
             display: flex;
             flex-direction: column;
-        }
-
-    .logo-area h1 {
+        }.logo-area h1 {
             font-size: 1.1rem;
             color: var(--lila-oscuro);
             font-weight: 700;
         }
-
-    .logo-area span {
+.logo-area span {
             font-size: 0.75rem;
             color: var(--rosa-principal);
             font-weight: 600;
